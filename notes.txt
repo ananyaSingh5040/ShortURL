@@ -1,0 +1,5 @@
+Templating Engines - used for server side rendering as poora HTML you cannot write while sending a response through server.
+Different Templating Engines: 
+1) Embedded Javascript Templating Engine (EJS)
+2)Pug JS
+3)HandleBars
