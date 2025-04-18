@@ -3,3 +3,5 @@ Different Templating Engines:
 1) Embedded Javascript Templating Engine (EJS)
 2)Pug JS
 3)HandleBars
+Authentication :
+2 Patterns - 1) Stateful : where we maintain data or state or server side 2) Stateless - no state is maintained
