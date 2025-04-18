@@ -1,6 +1,7 @@
 const express = require("express");
 const router = require("./routes/url.js");
 const staticRoute = require("./staticRouter.js");
+const userRoute = require("./routes/user.js");
 const path = require("path");
 const URL = require("./models/url.js");
 const { connectDb } = require("./connect.js");
@@ -20,8 +21,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 //Routes:
-app.use("/url", router);
 app.use("/", staticRoute);
+app.use("/url", router);
+app.use("/user",userRoute);
+
+
+
+
 app.get("/:shortId", async (req, res) => {
   const shortID = req.params.shortId;
   const entry = await URL.findOneAndUpdate(
