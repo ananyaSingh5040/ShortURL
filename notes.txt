@@ -5,3 +5,11 @@ Different Templating Engines:
 3)HandleBars
 Authentication :
 2 Patterns - 1) Stateful : where we maintain data or state or server side 2) Stateless - no state is maintained
+stateless main what we'll do is ke we'll write parking token main hi the parking lot number and would stamp it, isse no state is maintained that is 
+ke you do not need to maintain a hashmap.
+STATEFUL:
+// Hash Map
+// The diary where you make entries of the session
+// Like valot parking was making a diary of entries of car numbers like that
+STATELESS:
+Token main hi add the entry and stamp it (JWT Token)
