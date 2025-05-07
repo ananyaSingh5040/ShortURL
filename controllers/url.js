@@ -12,7 +12,11 @@ async function handleShortURL(req, res) {
     visitHistory:[],
     createdBy: req.user._id,
   }); 
-  return res.render('home',{id: shortID});
+  if (req.headers['user-agent'] && req.headers['user-agent'].includes('Discordbot')) {
+    return res.json({ shortUrl: `http://localhost:8001/${shortID}` });
+  } else {
+    return res.render('home', { id: shortID });
+  }
 }
 async function handleAnalytics(req, res) {
   const shortID = req.params.shortId;

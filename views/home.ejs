@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 12px;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .but{
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>URL Shortener</h1>
+    <form method="POST" action="/url">
+      <label for="">Enter Your Original URL: </label>
+      <input type="text" name="url" placeholder="https://example.com" />
+      <button type="submit">Generate</button> <br><br>
+      <% if (locals.id) { %>
+      <p>
+        URL Generated:
+        <a href="http://localhost:8001/<%= id %>" target="_blank"
+          >http://localhost:8001/<%= id %></a
+        > <br><br>
+       <button><a class="but" href="/">HomePage</a></button>
+      </p>
+
+      <% } %> 
+      <% if (locals.urls) { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Sr.No</th>
+            <th>URL</th>
+            <th>Redirect URL</th>
+            <th>Clicks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% urls.forEach((url,index) => { %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><a href="http://localhost:8001/<%= url.shortId %>">http://localhost:8001/<%= url.shortId %></a></td>
+            <td><%= url.redirectUrl %></td>
+            <td><%= url.visitHistory.length %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+
+      <% } %>
+    </form>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 const express = require("express");
-const{handleShortURL, handleRedirect} = require("../controllers/url");
+const{handleShortURL, handleAnalytics} = require("../controllers/url");
+const{smartAuth} = require("../middlewares/auth");
 const router = express.Router();
-router.post("/",handleShortURL);
-router.get("/:shortId",handleRedirect);
+router.post("/",smartAuth,handleShortURL);
+router.get("/analytics/:shortId",handleAnalytics);
 module.exports= router;
