@@ -13,7 +13,7 @@ async function handleShortURL(req, res) {
     createdBy: req.user._id,
   }); 
   if (req.headers['user-agent'] && req.headers['user-agent'].includes('Discordbot')) {
-    return res.json({ shortUrl: `http://localhost:8001/${shortID}` });
+    return res.json({ shortUrl: `https://shorturl-production-62bf.up.railway.app/${shortID}` });
   } else {
     return res.render('home', { id: shortID });
   }
