@@ -8,7 +8,7 @@ const URL = require("./models/url.js");
 const { connectDb } = require("./connect.js");
 const {checkForAuthentication,restrictTo,smartAuth} = require("./middlewares/auth.js");
 const app = express();
-const PORT = 8001;
+const PORT = process.env.PORT || 8001;
 const dotenv= require("dotenv");
 dotenv.config();
 //Connection:
