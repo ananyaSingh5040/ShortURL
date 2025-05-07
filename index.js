@@ -9,9 +9,10 @@ const { connectDb } = require("./connect.js");
 const {checkForAuthentication,restrictTo,smartAuth} = require("./middlewares/auth.js");
 const app = express();
 const PORT = 8001;
-
+const dotenv= require("dotenv");
+dotenv.config();
 //Connection:
-connectDb("mongodb://127.0.0.1:27017/short-url").then(() =>
+connectDb(process.env.MONGO_URI).then(() =>
   console.log("MongoDB connected!")
 );
 
