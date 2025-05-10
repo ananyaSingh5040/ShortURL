@@ -25,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser()); //used to parse cookies.
 app.use(checkForAuthentication);
+app.use(express.static(path.join(__dirname, 'public'))); //for static css files
 
 app.use("/", staticRoute);
 app.use("/url", router);
