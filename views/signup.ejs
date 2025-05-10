@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>Signup</title>
 </head>
 <body>
     <h1>SignUp</h1>
+     <div class="formbox">
     <form action="/user" method="post">
         <label for="">Name: </label>
         <input type="text" required name="name">
@@ -15,6 +17,8 @@
         <label for="">Password: </label>
         <input type="password" required name="password">
         <button type="submit">SignUp</button>
+        <p>Already have an Account?    <a href="/login">Login</a></p>
     </form>
+    </div>
 </body>
 </html>
